@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Urban Elegance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏠 Urban Elegance</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.php">Properties</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 0; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Get In Touch</h1>
+            <p style="font-size: 1.2rem;">We're here to help you find your perfect home</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                <!-- Contact Form -->
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #333;">Send us a Message</h2>
+                    <form id="contactForm" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div id="contactMessage"></div>
+                        
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="property">Property Related</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Message</label>
+                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 5px; font-family: inherit;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #333;">Contact Information</h2>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #333;">Address</h4>
+                                <p style="margin: 0; color: #666;">123 Business District, Mumbai, Maharashtra 400001</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #333;">Phone</h4>
+                                <p style="margin: 0; color: #666;">+91 98765 43210</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-envelope" style="color: white;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #333;">Email</h4>
+                                <p style="margin: 0; color: #666;">info@urbanelegance.com</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center;">
+                            <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                <i class="fas fa-clock" style="color: white;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; color: #333;">Business Hours</h4>
+                                <p style="margin: 0; color: #666;">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3 style="margin-bottom: 1.5rem; color: #333;">Frequently Asked Questions</h3>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <h5 style="color: #667eea; margin-bottom: 0.5rem;">How do I list my property?</h5>
+                            <p style="color: #666; font-size: 0.9rem;">Register as an owner and use our simple property listing form.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <h5 style="color: #667eea; margin-bottom: 0.5rem;">Are there any broker fees?</h5>
+                            <p style="color: #666; font-size: 0.9rem;">No! We connect tenants and owners directly with zero broker fees.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <h5 style="color: #667eea; margin-bottom: 0.5rem;">How do I make payments?</h5>
+                            <p style="color: #666; font-size: 0.9rem;">We support UPI, cards, net banking, and digital wallets.</p>
+                        </div>
+                        
+                        <div>
+                            <h5 style="color: #667eea; margin-bottom: 0.5rem;">Is my data secure?</h5>
+                            <p style="color: #666; font-size: 0.9rem;">Yes, we use industry-standard security measures to protect your data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: white; padding: 3rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 1rem;">🏠 Urban Elegance</h3>
+                    <p style="color: #9ca3af;">Your trusted partner in finding the perfect rental home without any broker fees.</p>
+                </div>
+                <div>
+                    <h4 style="font-weight: 600; color: white; margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="properties.php" style="color: #9ca3af; text-decoration: none;">Properties</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="about.html" style="color: #9ca3af; text-decoration: none;">About Us</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af; text-decoration: none;">Contact</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="login.html" style="color: #9ca3af; text-decoration: none;">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-weight: 600; color: white; margin-bottom: 1rem;">Contact Info</h4>
+                    <p style="color: #9ca3af; margin-bottom: 0.5rem;"><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p style="color: #9ca3af; margin-bottom: 0.5rem;"><i class="fas fa-envelope"></i> info@urbanelegance.com</p>
+                    <p style="color: #9ca3af;"><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; text-align: center;">
+                <p>&copy; 2024 Urban Elegance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const messageDiv = document.getElementById('contactMessage');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (in real app, this would send to server)
+            setTimeout(() => {
+                messageDiv.innerHTML = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We\'ll get back to you soon.</div>';
+                this.reset();
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

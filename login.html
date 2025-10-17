@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Urban Elegance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏠 Urban Elegance</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.php">Properties</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Form -->
+    <div class="form-container">
+        <h2 class="form-title">Login to Your Account</h2>
+
+        <div id="message"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </div>
+        </form>
+
+        <div style="text-align: center; margin-top: 1rem;">
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const messageDiv = document.getElementById('message');
+            const submitBtn = this.querySelector('button[type="submit"]');
+
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+            submitBtn.disabled = true;
+
+            fetch('auth/login.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        messageDiv.innerHTML = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> Login successful! Redirecting...</div>';
+                        setTimeout(() => {
+                            if (data.role === 'admin') {
+                                window.location.href = 'Admin_Dashboard.php';
+                            } else if (data.role === 'owner') {
+                                window.location.href = 'dashboard/owner_dashboard.php';
+                            } else {
+                                window.location.href = 'dashboard/user_dashboard.php';
+                            }
+                        }, 1500);
+                    } else {
+                        messageDiv.innerHTML = '<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> ' + data.message + '</div>';
+                        submitBtn.innerHTML = 'Login';
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Login error:', error);
+                    messageDiv.innerHTML = '<div class="alert alert-error"><i class="fas fa-exclamation-triangle"></i> Connection error. Please ensure the server is running and try again.</div>';
+                    submitBtn.innerHTML = 'Login';
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Demo login credentials helper
+        document.addEventListener('DOMContentLoaded', function () {
+            const demoInfo = document.createElement('div');
+            demoInfo.innerHTML = `
+                <div style="background: #e3f2fd; border: 1px solid #2196f3; border-radius: 5px; padding: 1rem; margin-bottom: 1rem;">
+                    <h4 style="margin: 0 0 0.5rem 0; color: #1976d2;"><i class="fas fa-info-circle"></i> Demo Credentials</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: #1976d2;">
+                        <strong>Admin:</strong> admin@urbanelegance.com / password<br>
+                        <strong>Test User:</strong> Create a new account or use demo data
+                    </p>
+                </div>
+            `;
+            document.querySelector('.form-container').insertBefore(demoInfo, document.getElementById('loginForm'));
+        });
+    </script>
+</body>
+
+</html>

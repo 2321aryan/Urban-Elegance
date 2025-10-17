@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - Urban Elegance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏠 Urban Elegance</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.php">Properties</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div style="max-width: 1200px; margin: 2rem auto; padding: 0 20px;">
+        <!-- Property Images -->
+        <div id="propertyImages" style="margin-bottom: 2rem;">
+            <!-- Images will be loaded here -->
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+            <!-- Property Details -->
+            <div>
+                <h1 id="propertyTitle" style="font-size: 2rem; margin-bottom: 1rem; color: #333;"></h1>
+                
+                <div id="propertyPricing" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <!-- Pricing will be loaded here -->
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Property Details</h3>
+                    <div id="propertyDetails" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <!-- Details will be loaded here -->
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Description</h3>
+                    <p id="propertyDescription" style="line-height: 1.6; color: #666;"></p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 1rem;">Location</h3>
+                    <p id="propertyLocation" style="color: #666; line-height: 1.6;"></p>
+                </div>
+            </div>
+
+            <!-- Contact Owner -->
+            <div>
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Contact Owner</h3>
+                    
+                    <div id="ownerInfo" style="margin-bottom: 2rem;">
+                        <!-- Owner info will be loaded here -->
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="background: #e3f2fd; border: 1px solid #2196f3; border-radius: 5px; padding: 1rem; margin-bottom: 1rem;">
+                            <p style="margin: 0; color: #1976d2; font-size: 0.9rem;">
+                                <i class="fas fa-info-circle"></i> This is a sample property. 
+                                <a href="register.html" style="color: #1976d2; font-weight: bold;">Register</a> to see real properties and contact owners.
+                            </p>
+                        </div>
+                        <a href="register.html" class="btn btn-primary" style="width: 100%; text-align: center; display: block; text-decoration: none;">Register to Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: white; text-align: center; padding: 2rem 0; margin-top: 3rem;">
+        <p>&copy; 2024 Urban Elegance. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sample property data
+        const sampleProperties = {
+            1: {
+                title: "Modern 3BHK Apartment",
+                rent_amount: 25000,
+                deposit_amount: 50000,
+                bedrooms: 3,
+                bathrooms: 2,
+                area_sqft: 1200,
+                property_type: "apartment",
+                furnished: "semi-furnished",
+                parking: true,
+                city: "Mumbai",
+                state: "Maharashtra",
+                address: "123 Bandra West, Near Station",
+                description: "Spacious apartment with modern amenities, close to railway station and shopping centers. Perfect for families looking for comfort and convenience.",
+                owner_name: "John Smith",
+                owner_phone: "9876543210",
+                owner_email: "john@example.com",
+                images: ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"]
+            },
+            2: {
+                title: "Luxury Villa with Garden",
+                rent_amount: 45000,
+                deposit_amount: 90000,
+                bedrooms: 4,
+                bathrooms: 3,
+                area_sqft: 2500,
+                property_type: "villa",
+                furnished: "furnished",
+                parking: true,
+                city: "Bangalore",
+                state: "Karnataka",
+                address: "456 Koramangala, Electronic City",
+                description: "Beautiful villa with private garden, swimming pool, and premium fittings. Ideal for large families who appreciate luxury living.",
+                owner_name: "Mike Johnson",
+                owner_phone: "9876543211",
+                owner_email: "mike@example.com",
+                images: ["https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"]
+            },
+            3: {
+                title: "Cozy 2BHK Studio",
+                rent_amount: 18000,
+                deposit_amount: 36000,
+                bedrooms: 2,
+                bathrooms: 1,
+                area_sqft: 800,
+                property_type: "studio",
+                furnished: "furnished",
+                parking: false,
+                city: "Pune",
+                state: "Maharashtra",
+                address: "789 Hinjewadi Phase 1",
+                description: "Perfect for young professionals, fully furnished with all modern amenities. Close to IT parks and entertainment centers.",
+                owner_name: "Sara Wilson",
+                owner_phone: "9876543212",
+                owner_email: "sara@example.com",
+                images: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"]
+            },
+            4: {
+                title: "Spacious Family House",
+                rent_amount: 35000,
+                deposit_amount: 70000,
+                bedrooms: 3,
+                bathrooms: 2,
+                area_sqft: 1800,
+                property_type: "house",
+                furnished: "unfurnished",
+                parking: true,
+                city: "Delhi",
+                state: "Delhi",
+                address: "321 Sector 15, Dwarka",
+                description: "Independent house perfect for families, with parking and garden space. Quiet neighborhood with good connectivity.",
+                owner_name: "Raj Patel",
+                owner_phone: "9876543213",
+                owner_email: "raj@example.com",
+                images: ["https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"]
+            },
+            5: {
+                title: "Premium Penthouse",
+                rent_amount: 65000,
+                deposit_amount: 130000,
+                bedrooms: 4,
+                bathrooms: 4,
+                area_sqft: 3000,
+                property_type: "apartment",
+                furnished: "furnished",
+                parking: true,
+                city: "Gurgaon",
+                state: "Haryana",
+                address: "654 Golf Course Road",
+                description: "Luxury penthouse with city views, premium amenities and rooftop access. Perfect for those who want the best of urban living.",
+                owner_name: "Priya Sharma",
+                owner_phone: "9876543214",
+                owner_email: "priya@example.com",
+                images: ["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"]
+            },
+            6: {
+                title: "Charming 1BHK Flat",
+                rent_amount: 15000,
+                deposit_amount: 30000,
+                bedrooms: 1,
+                bathrooms: 1,
+                area_sqft: 600,
+                property_type: "apartment",
+                furnished: "semi-furnished",
+                parking: false,
+                city: "Chennai",
+                state: "Tamil Nadu",
+                address: "987 Anna Nagar",
+                description: "Compact and well-designed apartment, perfect for singles or couples. Great location with easy access to public transport.",
+                owner_name: "Amit Kumar",
+                owner_phone: "9876543215",
+                owner_email: "amit@example.com",
+                images: ["https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"]
+            }
+        };
+
+        // Get property ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const propertyId = urlParams.get('id') || '1';
+        const property = sampleProperties[propertyId] || sampleProperties['1'];
+
+        // Load property data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set title
+            document.title = property.title + ' - Urban Elegance';
+            document.getElementById('propertyTitle').textContent = property.title;
+
+            // Set images
+            document.getElementById('propertyImages').innerHTML = `
+                <div style="height: 400px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                    <img src="${property.images[0]}" alt="Property Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            `;
+
+            // Set pricing
+            document.getElementById('propertyPricing').innerHTML = `
+                <div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #667eea;">₹${property.rent_amount.toLocaleString()}</div>
+                    <div style="color: #666;">per month</div>
+                </div>
+                <div style="border-left: 2px solid #eee; padding-left: 2rem;">
+                    <div style="display: flex; gap: 2rem; font-size: 1.1rem;">
+                        <span><strong>${property.bedrooms}</strong> BHK</span>
+                        <span><strong>${property.bathrooms}</strong> Bath</span>
+                        <span><strong>${property.area_sqft.toLocaleString()}</strong> sq ft</span>
+                    </div>
+                </div>
+            `;
+
+            // Set details
+            document.getElementById('propertyDetails').innerHTML = `
+                <div><strong>Type:</strong> ${property.property_type.charAt(0).toUpperCase() + property.property_type.slice(1)}</div>
+                <div><strong>Furnished:</strong> ${property.furnished.charAt(0).toUpperCase() + property.furnished.slice(1)}</div>
+                <div><strong>Parking:</strong> ${property.parking ? 'Available' : 'Not Available'}</div>
+                <div><strong>Security Deposit:</strong> ₹${property.deposit_amount.toLocaleString()}</div>
+            `;
+
+            // Set description
+            document.getElementById('propertyDescription').textContent = property.description;
+
+            // Set location
+            document.getElementById('propertyLocation').innerHTML = `
+                ${property.address}<br>
+                ${property.city}, ${property.state}
+            `;
+
+            // Set owner info
+            document.getElementById('ownerInfo').innerHTML = `
+                <div style="font-weight: bold; margin-bottom: 0.5rem;">${property.owner_name}</div>
+                <div style="color: #666; margin-bottom: 0.5rem;">📞 ${property.owner_phone}</div>
+                <div style="color: #666;">✉️ ${property.owner_email}</div>
+            `;
+        });
+    </script>
+</body>
+</html>
